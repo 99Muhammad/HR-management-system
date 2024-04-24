@@ -11,7 +11,6 @@ function EmployeeInfo( fullName, department, level, imageURL) {
     this.level = level;
     this.imageURL = imageURL;
     this.salary = 0;
-    alculateSalary
     arrEmployeeObjs.push(this);  
 }
 
@@ -26,7 +25,7 @@ EmployeeInfo.prototype.calculateNetSalary=function(randomSalary)
     return Math.ceil(netSalary);
 }
 
-EmployeeInfo.prototype.c = function () {
+EmployeeInfo.prototype.calculateSalary = function () {
     
     let randomSalary;
     if(this.level==="Senior")
