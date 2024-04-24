@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <title>HR-management-system</title>
 </head>
 <body>
+    
     <header>
         <img src="HR.jpg" alt="LogoForWebsite">
     <nav>       
@@ -19,8 +21,41 @@
 
     <main>
        <section id="employeesInfo">
-       
-       </section>
+        <div class ="formc">
+        <form id="formID">
+            <fieldset>
+                <legend>Employee Info</legend>
+            <label for="fullName" class="twoLable">Full Name:</label><br>
+            <input type="text" name="fullName" id="fullName"><br>
+            
+                <label for="imageURL" class="twoLable">Image URL:</label><br>
+                <input type="text" name="imageURL" id="imageURL"><br>
+           
+            
+            <label for="department" >Select your department:</label>
+            <select name="Department" id="department">
+                <option value="administration">Administration</option>
+                <option value="marketing">Marketing</option>
+                <option value="development">Development</option>
+                <option value="finance">Finance</option>
+            </select><br><br>
+            <label for="level">Select your level:</label>
+            <select name="Level" id="level">
+                <option value="Junior">Junior</option>
+                <option value="Mid-Senior">Mid-Senior</option>
+                <option value="Senior">Senior</option>
+            </select><br><br>
+          
+            <input type="submit" value="Submit" id="submit"><br>
+        </fieldset>
+        </form>
+    </div>
+
+    <section id="showEmployeeInfo">
+      <!-- show data for employee-->
+     
+    </section>
+      
     </main>
     <br>
     <script src="app.js"></script>
@@ -50,4 +85,103 @@
    
 
 </body>
-</html>
+</html> 
+
+
+
+
+<!--<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/style_index.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="container">
+    <header>
+        <section class="img">
+            <img src="https://img.freepik.com/free-vector/illustration-data-analysis-graph_53876-18131.jpg?size=626&ext=jpg&ga=GA1.2.1155843027.1710621006&semt=ais" alt="">
+        </section>
+            <nav>
+                <p><a href="index.html">Home</a></p>
+                <p><a href="accounting.html">Accounting</a></p>
+            </nav>
+    </header>
+    
+    <main class="main">
+        <section class="one">
+            <form action="#">
+                <fieldset>
+                    
+                    <div>
+                        <label for="name"> Name </label>
+                    <input type="text" name="names" placeholder="Full name" id="name">
+                    </div>
+                    <div>
+                        <label for="image">ImsgeUrl</label>
+                    <input type="text" name="image" id="image" >
+                    </div>
+                    
+                    <div class="select">
+                    <select name="Department" id="select_debartment" class="Department" aria-label="Department" >
+                        <option selected> Enter your Department</option>
+                        <option value="Administration">Administration</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Development">Development</option>
+                        <option value="Finance">Finance</option>
+                    </select>     
+                        
+                    <select name="level" id="select_level" class="level" aria-label="level" >
+                        <option selected> Enter your level</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Mid-Senior">Mid-Senior</option>
+                        <option value="Senior">Senior</option>     
+                    </select>
+                    </div>                 
+                    <input type="submit" name="" id="submit">
+                </fieldset>
+    
+            </form>
+
+        </section>
+        
+        <hr>
+        <section class="Employee">
+            
+            
+            <section class="Administration" ></section>
+            <br>
+            <section class="Marketing"></section>
+            <br>
+            <section class="Development"></section>
+            <br>
+            <section class="Finance"></section>
+        </section>
+        
+
+    </main>
+    <footer>
+        <section class="social_media">
+            <i class="fa-brands fa-whatsapp" style="width: 30px; height: 30px; border-radius: 50%; background-color: green; text-align: center; line-height: 30px; color: #fff;"></i>
+            <i class="fa-brands fa-instagram" style="width: 30px; height: 30px; border-radius: 50%; background-color: orange; text-align: center; line-height: 30px; color: #fff;"></i>
+            <i class="fa-brands fa-facebook" style="width: 30px; height: 30px; border-radius: 50%; background-color: blue; text-align: center; line-height: 30px; color: #fff;"></i>
+            
+        </section>
+        <section class="copy_right">
+            <p> &copy; 2024 Employee managment. All Rights Reserved. </p>
+        </section>
+        
+    </footer>
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>-->
