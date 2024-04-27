@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,7 @@
     <title>HR-management-system</title>
 </head>
 <body>
+    
     <header>
         <img src="HR.jpg" alt="LogoForWebsite">
     <nav>       
@@ -19,12 +21,45 @@
 
     <main>
        <section id="employeesInfo">
-       
-       </section>
+        <div class ="formc">
+        <form id="formID">
+            <fieldset>
+                <legend>Employee Info</legend>
+            <label for="fullName" class="twoLable">Full Name:</label><br>
+            <input type="text" name="fullName" id="fullName"><br>
+            
+                <label for="imageURL" class="twoLable">Image URL:</label><br>
+                <input type="text" name="imageURL" id="imageURL"><br>
+           
+            
+            <label for="department" >Select your department:</label>
+            <select name="Department" id="department">
+                <option value="administration">Administration</option>
+                <option value="marketing">Marketing</option>
+                <option value="development">Development</option>
+                <option value="finance">Finance</option>
+            </select><br><br>
+            <label for="level">Select your level:</label>
+            <select name="Level" id="level">
+                <option value="Junior">Junior</option>
+                <option value="Mid-Senior">Mid-Senior</option>
+                <option value="Senior">Senior</option>
+            </select><br><br>
+          
+            <input type="submit" value="Submit" id="submit"><br>
+        </fieldset>
+        </form>
+    </div>
+
+    <section id="showEmployeeInfo">
+      <!-- show data for employee-->
+     
+    </section>
+      
     </main>
     <br>
-    <script src="app.js"></script>
-    
+    <script src="app.js" type="module"></script>
+ 
     <footer>
         <section>
             <p>Location</p>
@@ -46,8 +81,6 @@
 
     </footer>
     <p class="parFooter" style="text-align:right;">&copy; 2024 All Rights Reserved</p>
-    
-   
 
 </body>
-</html>
+</html> 

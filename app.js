@@ -1,15 +1,23 @@
-'use strict';
-let arrEmployeeObjs = []
 
-function EmployeeInfo(employeeID, fullName, department, level, imageURL) {
-    this.employeeID=employeeID;
+
+'use strict';
+ let arrEmployeeObjs = [];
+
+ let sectionEl = document.getElementById("showEmployeeInfo");
+let btnSubmit=document.getElementById('submit');
+let imgDiv=document.getElementById("imgDiv");
+let formEl=document.getElementById("formID");
+
+function EmployeeInfo( fullName, department, level, imageURL) {
+   
+    this.employeeID=createID();
     this.fullName = fullName;
     this.department = department;
     this.level = level;
     this.imageURL = imageURL;
     this.salary = 0;
-    
-    arrEmployeeObjs.push(this);
+ 
+    arrEmployeeObjs.push(this);  
 }
 
 function getRandomNumber(min, max) {
@@ -28,7 +36,6 @@ EmployeeInfo.prototype.calculateSalary = function () {
     let randomSalary;
     if(this.level==="Senior")
     {
-        
         randomSalary=getRandomNumber(1500,2000);
         this.salary=  this.calculateNetSalary(randomSalary);
 
@@ -41,37 +48,118 @@ EmployeeInfo.prototype.calculateSalary = function () {
         randomSalary=getRandomNumber(500,1000);
         this.salary=  this.calculateNetSalary(randomSalary);
     }
-    
             
     }
 
-let person = new  EmployeeInfo(1000, 'Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-let person2 = new EmployeeInfo(1001, 'Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
-let person3 = new EmployeeInfo(1002, 'Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-let person4 = new EmployeeInfo(1003, 'Safi Walid', 'Administration', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-let person5 = new EmployeeInfo(1004, 'Omar Zaid', 'Development', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-let person6 = new EmployeeInfo(1005, 'Rana Saleh', 'Development', 'Junior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
-let person7 = new EmployeeInfo(1006, 'Hadi Ahmad', 'Finance', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
+ 
+// let person = new  EmployeeInfo('Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
+// let person2 = new EmployeeInfo('Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
+// let person3 = new EmployeeInfo('Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
+// let person4 = new EmployeeInfo('Safi Walid', 'Administration', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
+// let person5 = new EmployeeInfo('Omar Zaid', 'Development', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
+// let person6 = new EmployeeInfo('Rana Saleh', 'Development', 'Junior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
+// let person7 = new EmployeeInfo('Hadi Ahmad', 'Finance', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
 
 
-EmployeeInfo.prototype.render = function(){
 
-    document.write(`<h2>The employee id is [ ${this.employeeID} ], the name is <span style="color:blue
-    ;font-family:Courier New">${this.fullName}</span> and 
-     the salary is <span style="color:brown;font-family:Courier New
-     ">${this.salary}</span></h2>`);
+ function createID()
+{
+return getRandomNumber(1000,9999);
 }
 
 
-
-
- function renderAllEmployees()
- {
-    for (let employee of arrEmployeeObjs) {
-        employee.calculateSalary();
-       employee.render();
-     }
- }
- renderAllEmployees();
+EmployeeInfo.prototype.render = function()
+{
+    let divEl = document.createElement("div");
+    divEl.classList.add('card');
  
- console.log(arrEmployeeObjs);
+  let imag=document.createElement("img");
+  imag.src= this.imageURL;
+  imag.alt="picture of an employee";
+ 
+   divEl.appendChild(imag);
+
+  let fullName=document.createElement('h4');
+  fullName.textContent=`Name: ${this.fullName}- ID: ${this.employeeID}`;
+ 
+ divEl.appendChild(fullName);
+
+
+  let department=document.createElement('h4');
+  department.textContent=`Departmenrt:${this.department} - Level: ${this.level}`;
+
+divEl.appendChild(department);
+
+
+  this.calculateSalary();
+  let salary=document.createElement('h4');
+  salary.textContent=`Salary:${this.salary}`;
+  divEl.appendChild(salary);
+
+    sectionEl.appendChild(divEl);
+    sectionEl.classList.add("showEmployeeInfo");
+  
+}
+
+formEl.addEventListener("submit",handleSubmit);
+
+function handleSubmit(event)
+{
+  event.preventDefault();
+  
+  let fullName=event.target.fullName.value;
+  let imageURL=event.target.imageURL.value;
+  let department=event.target.department.value;
+  let level=event.target.level.value;
+
+  let newEmployee=new EmployeeInfo(fullName,department,level,imageURL);
+
+    newEmployee.render();
+
+    saveEmplInfoInLocalStorga(arrEmployeeObjs);
+  }
+
+  // arrEmployeeObjs.forEach((emp)=>
+  // {
+  //   emp.render();
+  // });
+
+  function saveEmplInfoInLocalStorga(arrEmplInfo)
+{
+
+
+  let strEmplInfo=JSON.stringify(arrEmplInfo);
+  localStorage.setItem("EmplInfo",strEmplInfo);
+}
+
+function getEmplInfoFromLocalStorga()
+{
+  let getEmplInfo = localStorage.getItem("EmplInfo");
+  
+  let arrEmpl= JSON.parse(getEmplInfo);
+  
+  if (arrEmpl != null) {
+      for (let i = 0; i < arrEmpl.length; i++) {
+          
+          new EmployeeInfo(arrEmpl[i].fullName, arrEmpl[i].department,
+            arrEmpl[i].level, arrEmpl[i].imageURL, arrEmpl[i].salary);
+      }
+  }
+  printAllEmployeesInfo();
+}
+
+function printAllEmployeesInfo()
+{
+  for (let i = 0; i < arrEmployeeObjs.length; i++) 
+  {
+    arrEmployeeObjs[i].render();
+  }
+}
+
+getEmplInfoFromLocalStorga();
+console.log(arrEmployeeObjs);
+
+
+  
+   
+ 
