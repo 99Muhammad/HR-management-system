@@ -102,8 +102,13 @@ footer p {
      padding: 10px;
      margin:10px;
     
+<<<<<<< HEAD
      display: flex;
     flex-wrap: wrap; 
+=======
+     /* display: flex;
+    flex-wrap: wrap; */
+>>>>>>> main
 
     flex: 0 0 auto;
     margin-right: 5px;
@@ -111,6 +116,7 @@ footer p {
   .showEmployeeInfo {
     display: flex;
     flex-wrap: wrap;
+<<<<<<< HEAD
   } 
 
   table{
@@ -130,3 +136,12 @@ table tfoot  {
 
 
  
+=======
+  }
+  
+ 
+
+
+
+ 
+>>>>>>> main
