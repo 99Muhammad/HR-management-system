@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 'use strict';
  let arrEmployeeObjs = [];
@@ -8,13 +7,6 @@ let btnSubmit=document.getElementById('submit');
 let imgDiv=document.getElementById("imgDiv");
 let formEl=document.getElementById("formID");
 
-=======
-
-
-'use strict';
-let arrEmployeeObjs = []
-
->>>>>>> main
 function EmployeeInfo( fullName, department, level, imageURL) {
    
     this.employeeID=createID();
@@ -23,10 +15,7 @@ function EmployeeInfo( fullName, department, level, imageURL) {
     this.level = level;
     this.imageURL = imageURL;
     this.salary = 0;
-<<<<<<< HEAD
  
-=======
->>>>>>> main
     arrEmployeeObjs.push(this);  
 }
 
@@ -62,15 +51,6 @@ EmployeeInfo.prototype.calculateSalary = function () {
     }
 
  
-<<<<<<< HEAD
-// let person = new  EmployeeInfo('Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-// let person2 = new EmployeeInfo('Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
-// let person3 = new EmployeeInfo('Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-// let person4 = new EmployeeInfo('Safi Walid', 'Administration', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-// let person5 = new EmployeeInfo('Omar Zaid', 'Development', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-// let person6 = new EmployeeInfo('Rana Saleh', 'Development', 'Junior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
-// let person7 = new EmployeeInfo('Hadi Ahmad', 'Finance', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
-=======
 let person = new  EmployeeInfo('Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
 let person2 = new EmployeeInfo('Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
 let person3 = new EmployeeInfo('Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
@@ -78,14 +58,12 @@ let person4 = new EmployeeInfo('Safi Walid', 'Administration', 'Mid-Senior', 'ht
 let person5 = new EmployeeInfo('Omar Zaid', 'Development', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
 let person6 = new EmployeeInfo('Rana Saleh', 'Development', 'Junior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU');
 let person7 = new EmployeeInfo('Hadi Ahmad', 'Finance', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU');
->>>>>>> main
 
 
 
  function createID()
 {
 return getRandomNumber(1000,9999);
-<<<<<<< HEAD
 }
 
 
@@ -178,22 +156,7 @@ function printAllEmployeesInfo()
 }
 
 getEmplInfoFromLocalStorga();
-console.log(arrEmployeeObjs);
-
-
-  
-   
- 
-=======
-}
-
-let sectionEl = document.getElementById("showEmployeeInfo");
-
-let btnSubmit=document.getElementById('submit');
-let imgDiv=document.getElementById("imgDiv");
-let formEl=document.getElementById("formID");
-// console.log(btnSubmit);
-
+console.log(arrEmployeeObjs)
 
 
 EmployeeInfo.prototype.render = function()
@@ -254,4 +217,3 @@ function handleSubmit(event)
    
  
 
->>>>>>> main
