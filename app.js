@@ -10,12 +10,10 @@ let formEl=document.getElementById("formID");
 function EmployeeInfo( id,fullName, department, level, imageURL,salary) {
    
     this.id=id;
-    // this.employeeID=createID();
     this.fullName = fullName;
     this.department = department;
     this.level = level;
     this.imageURL = imageURL;
-    // this.salary = this.calculateSalary();
     this.salary=salary;
  
     arrEmployeeObjs.push(this);  
@@ -33,35 +31,8 @@ EmployeeInfo.prototype.calculateNetSalary=function(randomSalary)
     return Math.ceil(netSalary);
 }
 
-  // function calculateSalary (level) {
-    
-  //   let randomSalary;
-  //   let salary = 0;
-  //   if(level==="Senior")
-  //   {
-  //       randomSalary=getRandomNumber(1500,2000);
-  //       salary=  calculateNetSalary(randomSalary);
-
-  //   }else if(level==="Mid-Senior")
-  //   {
-  //       randomSalary=getRandomNumber(1000,1500);
-  //       salary=  calculateNetSalary(randomSalary);
-  //   }
-  //   else{
-  //       randomSalary=getRandomNumber(500,1000);
-  //       salary=  calculateNetSalary(randomSalary);
-  //   }
-  //   return salary;
-            
-  //   }
-
-    // EmployeeInfo.prototype.calculateNetSalary=function(randomSalary)
-    // {
-    //     let netSalary= randomSalary*(1-0.075) ;
-    //     return Math.ceil(netSalary);
-    // }
-    
-    EmployeeInfo.prototype.calculateSalary = function () {
+ 
+EmployeeInfo.prototype.calculateSalary = function () {
         
         let randomSalary;
         if(this.level==="Senior")
@@ -81,18 +52,19 @@ EmployeeInfo.prototype.calculateNetSalary=function(randomSalary)
         return this.salary;
                 
         }
+
  
-        function addOldEmployee()
+ function addOldEmployeeToLocalStorage()
         {
-          let person = new  EmployeeInfo(10,'Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',25);
-          let person2 = new EmployeeInfo(20,'Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU',30);
-          let person3 = new EmployeeInfo(30,'Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',40);
-          let person4 = new EmployeeInfo(40,'Safi Walid', 'Administration', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',100);
+          let person = new  EmployeeInfo(10,'Ghazi Samer', 'Administration', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',600);
+          let person2 = new EmployeeInfo(20,'Lana Ali', 'Finance', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU',588);
+          let person3 = new EmployeeInfo(30,'Tamara Ayoub', 'Marketing', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',800);
+          let person4 = new EmployeeInfo(40,'Safi Walid', 'Administration', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',300);
           let person5 = new EmployeeInfo(50,'Omar Zaid', 'Development', 'Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',200);
           let person6 = new EmployeeInfo(60,'Rana Saleh', 'Development', 'Junior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZlAcC_1n7gulS21qRrKRo-FYLW4xLt9y2eA&usqp=CAU',400);
           let person7 = new EmployeeInfo(70,'Hadi Ahmad', 'Finance', 'Mid-Senior', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIf4R5qPKHPNMyAqV-FjS_OTBB8pfUV29Phg&usqp=CAU',500);
           saveEmplInfoInLocalStorga(arrEmployeeObjs);
-          //arrEmployeeObjs.length=0;
+          
         }
 
 
@@ -127,7 +99,7 @@ EmployeeInfo.prototype.render = function()
 divEl.appendChild(department);
 
 
-  //this.calculateSalary();
+ 
   let salary=document.createElement('h4');
   salary.textContent=`Salary:${this.salary}`;
   divEl.appendChild(salary);
@@ -158,9 +130,7 @@ function handleSubmit(event)
     saveEmplInfoInLocalStorga(arrEmployeeObjs);
   }
 
-  // arrEmployeeObjs.forEach(element => {
-  //   emp.render();
-  // });
+
   
   function saveEmplInfoInLocalStorga(arrEmplInfo)
 {
@@ -185,8 +155,9 @@ function getEmplInfoFromLocalStorga()
       arrEmpl[i].level, arrEmpl[i].imageURL, arrEmpl[i].salary);
 
     }
-  }else{
-    addOldEmployee();
+  }else
+  {
+    addOldEmployeeToLocalStorage();
   }
   
 
@@ -204,5 +175,5 @@ function printAllEmployeesInfo()
 getEmplInfoFromLocalStorga();
 
 console.log(arrEmployeeObjs);
-// console.log(arrEmpl);
+
 
