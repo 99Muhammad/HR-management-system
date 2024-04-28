@@ -19,7 +19,6 @@ DepartmentsInfo.prototype.addEmployee=function()
     this.numOfEmployees++;
 
 }
-    
 
 DepartmentsInfo.prototype.calculateTotalSalary=function(salary)
 {
