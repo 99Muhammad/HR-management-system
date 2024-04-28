@@ -17,12 +17,12 @@ function DepartmentsInfo(name,salary)
 DepartmentsInfo.prototype.addEmployee=function()
 {
     this.numOfEmployees++;
-
 }
 
 DepartmentsInfo.prototype.calculateTotalSalary=function(salary)
 {
       this.totalSalary+=salary;
+     
 }
 
 DepartmentsInfo.prototype.calculateAvgSalary=function()
@@ -32,19 +32,23 @@ DepartmentsInfo.prototype.calculateAvgSalary=function()
 
 function proccessingDepartments()
 {
-    for (let i = 0; i < arrOfLsInfo.length; i++) {
+    for (let i =  0; i < arrOfLsInfo.length; i++) {
 
         const departmentName = arrOfLsInfo[i].department;
         const existingDepartment = allDepartments.find(dep => dep.name === departmentName);
       
-        if (!existingDepartment) {
+        if (!existingDepartment) 
+        {
+           
           new DepartmentsInfo(departmentName,arrOfLsInfo[i].salary);
-
-         
+          console.log(departmentName,arrOfLsInfo[i].salary);
         } else {
           existingDepartment.addEmployee();
+         
           existingDepartment.calculateTotalSalary(arrOfLsInfo[i].salary);
           existingDepartment.calculateAvgSalary();
+          console.log(arrOfLsInfo[i].salary);
+      
         }
       }
 }
@@ -60,8 +64,8 @@ function getEmplInfoFromLocalStorga()
    {
       proccessingDepartments();
    }
+   
   }
-  
 
 function fillTableWithDepartments()
 {
@@ -105,7 +109,7 @@ function fillTableWithDepartments()
     `
         <tr>
             <th>Total:</th>
-            <th>${arrOfLsInfo.length}</th>
+            <th>${arrOfLsInfo.length}</th> 
             <th>${departmentsAverageSalaries}</th>
             <th>${departmentsSalaries}</th>
         </tr>
@@ -120,5 +124,4 @@ function fillTableWithDepartments()
 getEmplInfoFromLocalStorga();
 fillTableWithDepartments();
 
-console.log(allDepartments);
  
